@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Oswald', sans-serif;
+  background-image: linear-gradient(to bottom right, rgb(126, 88, 182), rgb(103, 141, 219));
+  color: white;
+}
+
+h1 {
+  letter-spacing: 0.3rem;
+  padding: 30px 0px;
+  margin-block-start: 30px;
+}
+
+.cards-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 8rem);
+  grid-template-rows: repeat(4, 8rem);
+  grid-gap: 2rem;
+  perspective: 800px;
+  margin-block-end: 30px;
+}
+
+.moves {
+  font-size: 1.5rem;
+  padding: 0px 0px 20px 0px;
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+  width: 100%;
+  height: 100%;
+}
+
+.face, 
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.back {
+  background-image: url(https://www.publicdomainpictures.net/pictures/460000/velka/floral-leaves-vintage-wallpaper-1655053901MN6.jpg);
+  background-size: cover;
+}
+
+.toggleCard {
+  transform: rotateY(180deg);
+}
+
+.face {
+  transform: rotateY(-180deg);
+}
